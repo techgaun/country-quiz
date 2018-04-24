@@ -1,0 +1,67 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "countries quiz",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "QuizTypeIntent",
+                    "slots": [
+                        {
+                            "name": "QuizType",
+                            "type": "QuizType"
+                        }
+                    ],
+                    "samples": []
+                },
+                {
+                    "name": "QuizAnswerIntent",
+                    "slots": [
+                        {
+                            "name": "QuizAnswer",
+                            "type": "QuizAnswer"
+                        }
+                    ],
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "QuizType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "continent"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "currency"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "capital"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "QuizAnswer",
+                    "values": []
+                }
+            ]
+        }
+    }
+}
