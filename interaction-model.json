@@ -20,19 +20,35 @@
                     "slots": [
                         {
                             "name": "QuizType",
-                            "type": "QuizType"
+                            "type": "QuizType",
+                            "samples": [
+                                "Lets do {QuizType}",
+                                "Select {QuizType}",
+                                "{QuizType} please",
+                                "Proceed with {QuizType}",
+                                "I choose {QuizType}",
+                                "{QuizType}"
+                            ]
                         }
                     ],
-                    "samples": []
+                    "samples": [
+                        "select all",
+                        "select currency",
+                        "select capital",
+                        "select continent",
+                        "I want to play continent",
+                        "I want to play capital",
+                        "I want to play currency",
+                        "all",
+                        "any",
+                        "capital",
+                        "continent",
+                        "currency"
+                    ]
                 },
                 {
                     "name": "QuizAnswerIntent",
-                    "slots": [
-                        {
-                            "name": "QuizAnswer",
-                            "type": "QuizAnswer"
-                        }
-                    ],
+                    "slots": [],
                     "samples": []
                 }
             ],
@@ -40,6 +56,16 @@
                 {
                     "name": "QuizType",
                     "values": [
+                        {
+                            "name": {
+                                "value": "all"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "any"
+                            }
+                        },
                         {
                             "name": {
                                 "value": "continent"
@@ -56,12 +82,43 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name": "QuizAnswer",
-                    "values": []
                 }
             ]
-        }
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "QuizTypeIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "QuizType",
+                            "type": "QuizType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1480946639636.741085187225"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1480946639636.741085187225",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Its time for country quiz. Choose one of the categories among continent, currency, capital or all."
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Welcome to Country Quiz. Say one of the categories among continent, currency, capital or all."
+                    }
+                ]
+            }
+        ]
     }
 }
