@@ -4,26 +4,26 @@ const Alexa = require('alexa-sdk')
 const consts = require('./consts')
 
 const handlers = {
-  'LaunchRequest': () => {
+  'LaunchRequest': function() {
     this.response.speak(consts.messages['launch'])
     this.emit(':responseReady')
   },
-  'AMAZON.StopIntent': () => {
+  'AMAZON.StopIntent': function() {
     this.response.speak(consts.messages['stop'])
     this.emit(':responseReady')
   },
-  'AMAZON.HelpIntent': () => {
-    help_lines = consts.messages['help']
+  'AMAZON.HelpIntent': function() {
+    const help_lines = consts.messages['help']
     help_lines.forEach(help => {
       this.response.speak(help)
     })
     this.emit(':responseReady')
   },
-  'AMAZON.CancelIntent': () => {
+  'AMAZON.CancelIntent': function() {
     this.response.speak(consts.messages['stop'])
     this.emit(':responseReady')
   },
-  'Unhandled': () => {
+  'Unhandled': function() {
     this.emit('AMAZON.HelpIntent')
   }
 }
