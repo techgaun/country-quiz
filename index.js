@@ -4,6 +4,9 @@ const Alexa = require('alexa-sdk')
 const consts = require('./consts')
 
 const handlers = {
+  'NewSession': function() {
+    this.emit('LaunchRequest')
+  }
   'LaunchRequest': function() {
     this.response.speak(consts.messages['launch'])
     this.emit(':responseReady')
